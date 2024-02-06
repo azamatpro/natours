@@ -1,3 +1,4 @@
 node_modules
+myenv/
 config.env
 env/
