@@ -1,6 +1,6 @@
 const catchAsync = require('../utils/catchAsync');
 const Review = require('../models/reviewModel');
-const AppError = require('../utils/appError');
+// const AppError = require('../utils/appError');
 
 exports.getAllReviews = catchAsync(async (req, res, next) => {
   const reviews = await Review.find();
