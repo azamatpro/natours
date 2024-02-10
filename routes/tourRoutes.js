@@ -5,6 +5,7 @@ const reviewRouter = require('./reviewRoutes');
 
 const router = express.Router();
 
+// Merging routes
 router.use('/:tourId/reviews', reviewRouter);
 
 router
