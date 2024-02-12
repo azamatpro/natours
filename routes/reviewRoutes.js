@@ -13,6 +13,8 @@ router
     reviewController.createReview,
   );
 
+router.route('/:id').delete(reviewController.deleteReview);
+
 // router.get('/:id', reviewController.getReview);
 
 module.exports = router;
