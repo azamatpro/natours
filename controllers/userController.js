@@ -11,6 +11,11 @@ const filterObj = (obj, ...allowedField) => {
   return newObj;
 };
 
+exports.getMe = (req, res, next) => {
+  req.params.id = req.user.id;
+  next();
+};
+
 exports.updateMe = catchAsync(async (req, res, next) => {
   // 1) Create an error if user posts password
   if (req.body.password || req.body.passwordConfirm) {
@@ -21,7 +26,6 @@ exports.updateMe = catchAsync(async (req, res, next) => {
       ),
     );
   }
-
   // 2) filter necessary fields
   const filteredBody = filterObj(req.body, 'name', 'email');
   // 3) Update user document
