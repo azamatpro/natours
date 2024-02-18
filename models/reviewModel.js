@@ -33,6 +33,9 @@ const reviewSchema = new mongoose.Schema(
   },
 );
 
+// To make review unique from one user to one tour
+reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
+
 // pre middleware runs before doc creation
 reviewSchema.pre(/^find/, function (next) {
   // this.populate({
