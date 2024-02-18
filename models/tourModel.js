@@ -31,7 +31,7 @@ const tourSchema = new mongoose.Schema(
         message: 'Difficulty is either: easy, medium, difficult',
       },
     },
-    ratingsAvarage: {
+    ratingsAverage: {
       type: Number,
       default: 4.5,
       min: [1, 'A tour must be above than 1.0'],
@@ -119,7 +119,7 @@ const tourSchema = new mongoose.Schema(
 );
 
 // tourSchema.index({ price: 1 });
-tourSchema.index({ price: 1, ratingsAvarage: -1 });
+tourSchema.index({ price: 1, ratingsAverage: -1 });
 tourSchema.index({ slug: 1 });
 
 tourSchema.virtual('durationWeeks').get(function () {
